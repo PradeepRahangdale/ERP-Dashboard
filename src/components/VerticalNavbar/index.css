@@ -1,0 +1,89 @@
+/* Full height and width for the vertical navbar */
+.vertical-navbar {
+    height: 100vh; /* Full viewport height */
+    width: 250px; /* Adjust width as needed */
+    background-color: #5ea1e0; /* Dark background color */
+    padding-top: 20px; /* Padding from top */
+    position: fixed; /* Fixed position */
+    top: 0; /* Aligns to the top */
+    left: 0; /* Aligns to the left */
+    z-index: 1000; /* Ensure it is on top of other content */
+    display: flex;
+    flex-direction: column; /* Ensure items are displayed in a column */
+    border-radius: 10px;
+    /* transition: all 0.3s; */
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styles */
+    border-radius: 10px;
+}
+
+.nav-item {
+    margin-bottom: 10px; /* Space between items */
+    position: relative; /* Ensure sub-menu can be positioned absolutely */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s; /* Animation for background and transform */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.nav-link:hover {
+    background-color: #0e81f3; /* Darker hover background color */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.nav-icon {
+    font-size: 1.25rem; /* Icon size */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.nav-text {
+    font-size: 1rem; /* Text size */
+}
+
+.sub-menu {
+    position: absolute; /* Position it relative to the nav-item */
+    left: 100%; /* Align to the right of the nav-item */
+    top: 0;
+    background-color:#5ea1e0; /* Background color for sub-menu */
+    width: 200px; /* Width of the sub-menu */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    transform: translateX(-20px); /* Initial position off-screen */
+    opacity: 0; /* Hidden initially */
+    pointer-events: none; /* Prevent clicks when not visible */
+    border-radius: 10px;
+    
+}
+
+.sub-menu.open {
+    transform: translateX(0); /* Slide in */
+    opacity: 1; /* Make it visible */
+    pointer-events: auto; /* Enable clicks when visible */
+}
+
+.sub-nav-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.sub-nav-link:hover {
+    background-color: #0e81f3;
+    transform: scale(1.05);
+}

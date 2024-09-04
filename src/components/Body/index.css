@@ -1,0 +1,225 @@
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling for the entire page */
+}
+
+.body-container {
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+  background: linear-gradient(120deg, #f8f9fa, #3377dd);
+  min-height: 100vh; /* Ensure full height background */
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable scrolling within the body container */
+  max-height: 100vh; /* Limit the height to the viewport height */
+}
+
+/* Shifted when sidebar is open */
+.body-container.shifted {
+  margin-left: 250px; /* Adjust this value based on your sidebar width */
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Other styles remain unchanged */
+
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header p {
+  font-size: 1.3rem;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.summary-cards .card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+  margin: 0 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.summary-cards .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.summary-cards .card h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.summary-cards .card p {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+/* Recent Activities */
+.recent-activities {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+  animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recent-activities h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.recent-activities ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recent-activities ul li {
+  font-size: 1.3rem;
+  color: #555;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  transition: color 0.3s;
+}
+
+.recent-activities ul li:hover {
+  color: #007bff;
+}
+
+/* Analytics Section */
+.analytics-section {
+  margin-bottom: 30px;
+}
+
+.analytics-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-align: center;
+}
+
+.analytics-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.analytics-content .chart {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.analytics-content .chart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.analytics-content .chart h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.analytics-content .chart p {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Employee Performance */
+.employee-performance {
+  margin-bottom: 30px;
+}
+
+.employee-performance h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-align: center;
+}
+
+.performance-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.performance-content .employee-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  flex: 1;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.performance-content .employee-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.performance-content .employee-card h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.performance-content .employee-card p {
+  font-size: 1.3rem;
+  color: #666;
+}
+
+/* Additional Styles */
+@media (max-width: 768px) {
+  .summary-cards, .analytics-content, .performance-content {
+    flex-direction: column;
+  }
+  
+  .summary-cards .card, .analytics-content .chart, .performance-content .employee-card {
+    margin-bottom: 20px;
+  }
+}

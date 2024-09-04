@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/index.js';
+import VerticalNavbar from './components/VerticalNavbar/index.js';
+import Body from './components/Body/index.js';
+import CourseList from './components/Courselist/index.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import TestSchedule from './components/TestSchedule/index.js';
+import './App.css';  // Import a CSS file for styles
+
+
+const App = () => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    return (
+        <Router>
+            <div className={`app-container ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+                {/* Sidebar */}
+                <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+                    <VerticalNavbar />
+                </div>
+                
+                {/* Main Content */}
+                <div className="main-content">
+                    <Header onMenuClick={toggleSidebar} />
+                    <div className="content p-3">
+                        <Routes>
+                            {/* <Route path="/" element={<CourseList />} /> */}
+                            <Route path="/Body" element={<Body />} />
+                            
+                            <Route path="/Alerts" element={<TestSchedule />} />
+                        </Routes>
+                    </div>
+                    
+                    
+                    
+                </div>
+            </div>
+            
+        </Router>
+    );
+};
 
 export default App;
